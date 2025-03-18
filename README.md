@@ -4,11 +4,10 @@ The result of the work is the published webmap “aktualisierte_Kommunen.html”
 This guide describes how to use the automated workflow and update the telecommunication application areas on the web map directly from the database, and it ensures that all stakeholders have consistent access to the data and scripts.
 Alteryx Workflow is located in: Z:\General - Telco_Database\TKU_Web_Map\Alteryx_Workflow
 ![image](https://github.com/user-attachments/assets/c5dcba4c-0f68-4e2e-a230-605dd71cd030)
-****
 
 Steps to use the automated workflow in Alteryx. 
 
-**1. Setting up a dynamic storage location:
+1. Setting up a dynamic storage location:
 To ensure versioned and accessible data storage for everyone, use a dynamic local path that accesses your shared SharePoint via OneDrive. To do this, follow these steps:
 a. Folder link: Link the folder containing the VBA automations (e.g., "01_VBA_Automatizations") to your OneDrive. Changes will then be automatically synchronized with your SharePoint.
 b. Creating a virtual drive: To simplify access to the OneDrive folder, create a virtual drive:
@@ -34,5 +33,3 @@ After execution:
 • Check the updated web map for functionality and accuracy.
 • Move the old HTML file to the "Archive" folder. ![image](https://github.com/user-attachments/assets/41787ddd-da81-4107-bf13-ea57f651492d)
 
-**
-****
