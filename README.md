@@ -3,7 +3,6 @@
 The result of the work is the published webmap “aktualisierte_Kommunen.html” 
 This guide describes how to use the automated workflow and update the telecommunication application areas on the web map directly from the database, and it ensures that all stakeholders have consistent access to the data and scripts.
 Alteryx Workflow is located in: Z:\General - Telco_Database\TKU_Web_Map\Alteryx_Workflow
-![image](https://github.com/user-attachments/assets/c5dcba4c-0f68-4e2e-a230-605dd71cd030)
 
 Steps to use the automated workflow in Alteryx. 
 
@@ -31,5 +30,5 @@ Workflow in Alteryx:
 • The JavaScript files with the administrative boundaries are located in the "data/boundaries" folder. Add new boundaries as needed.
 After execution:
 • Check the updated web map for functionality and accuracy.
-• Move the old HTML file to the "Archive" folder. ![image](https://github.com/user-attachments/assets/41787ddd-da81-4107-bf13-ea57f651492d)
+• Move the old HTML file to the "Archive" folder.
 
