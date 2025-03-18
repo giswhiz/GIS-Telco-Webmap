@@ -5,6 +5,7 @@ This guide describes how to use the automated workflow and update the telecommun
 Alteryx Workflow is located in: Z:\General - Telco_Database\TKU_Web_Map\Alteryx_Workflow
 
 Steps to use the automated workflow in Alteryx. 
+![Alt text](https://raw.githubusercontent.com/giswhiz/GIS-Telco-Webmap/main/Alteryx_WF.jpg)
 
 1. Setting up a dynamic storage location:
 To ensure versioned and accessible data storage for everyone, use a dynamic local path that accesses your shared SharePoint via OneDrive. To do this, follow these steps:
@@ -21,6 +22,7 @@ a. In Microsoft Teams, navigate to the relevant team and then to the "Telco_Data
 b. Right-click on the "General" folder and select "Add Shortcut to OneDrive."
 c. In File Explorer, you will now find a shortcut to the "General" folder under "OneDrive." This will take you directly to the TKU web map files. The path should look like this: "Z:\General - Telco_Database\TKU_Web_Map."
 
+![Alt text](https://raw.githubusercontent.com/giswhiz/GIS-Telco-Webmap/main/Telco_Map.jpg)
 3. Updating the web map:
 Before execution:
 • Ensure that there is a connection to the storage location on the virtual drive.
