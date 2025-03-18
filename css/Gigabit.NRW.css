@@ -1,0 +1,60 @@
+.marker-cluster-400 div {
+	background-color: rgba(94, 94, 94, 0.8);
+
+	}
+.marker-cluster-400  {
+	background-color: rgba(82, 82, 82, 0);
+	
+	}
+
+.marker-cluster-100 div {
+	background-color: rgba(255, 255, 255, 0.8);
+	}
+.marker-cluster-100  {
+	background-color: rgba(255, 255, 243, 0);
+	}
+
+.marker-cluster-see div {
+	background-color: rgba(255, 127, 0, 0.8);
+	}
+.marker-cluster-see  {
+	background-color: rgba(255, 128, 0, 0);
+	}
+
+[leaflet-browser-print-pages] {
+		display: none;
+	}
+.pages-print-container [leaflet-browser-print-pages] {
+		display: block;
+	}
+		
+.nrw-table {
+	width: 100%;
+	border: solid 1px #DDEEEE;
+	border-collapse: collapse;
+	border-spacing: 0;
+	font-size: 11px;
+	margin-top: 5px;
+}
+
+.marker-Gemeinden_6 div {
+	background-color: rgba(255, 127, 0, 0.6);
+	}
+.marker-cluster-Gemeinden_6  {
+	background-color: rgba(243, 115, 0, 0.6);
+	}
+
+.nrw-table thead th {
+	background-color: #ddebef;
+	border: solid 1px #DDEEEE;
+	color: #336B6B;
+	padding: 2px;
+	text-align: left;
+	text-shadow: 1px 1px 1px #fff;
+}
+.nrw-table tbody td {
+	border: solid 1px #DDEEEE;
+	color: #333;
+	padding: 3px;
+	text-shadow: 1px 1px 1px #fff;
+}

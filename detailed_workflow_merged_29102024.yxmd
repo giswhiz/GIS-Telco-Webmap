@@ -1,0 +1,633 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2024.2">
+  <Nodes>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="54" width="192" height="648" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Input
+
+
+FTTBH TKU mit AGS
+
+
+
+
+
+
+
+
+
+TKU ID - Name
+
+
+
+
+
+
+
+
+
+
+AGS - Geometrien
+
+
+
+
+
+
+
+
+
+ggf. Geopandas</Text>
+          <Font name="Arial" size="9.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="Aqua" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="78" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Users\%INPUT_PATH%\Documents\GitHub_MyRepo\GIS-Portfolio\Telco_Web_Map\database\Telco_Data.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Telco_Data.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="78" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Users\%INPUT_PATH%\Documents\GitHub_MyRepo\GIS-Portfolio\Telco_Web_Map\database\Telco_Database_new_joined.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Telco_Database_new_joined.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="78" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">C:\Users\%INPUT_PATH%\Documents\GitHub_MyRepo\GIS-Portfolio\Telco_Web_Map\database\Telco_Database_new_joined.csv</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Telco_Database_new_joined.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="270" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="tku_id" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="tku_id" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_tku_id" selected="True" rename="Right_tku_id" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="354" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="AGS" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="AGS" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_AGS" selected="True" rename="Right_AGS" input="Right_" />
+                <SelectField field="Right_Name" selected="True" rename="Right_Name" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="414" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Name" selected="True" rename="Anbietername" />
+            <SelectField field="Right_Name" selected="True" rename="GEN" />
+            <SelectField field="SpatialObj" selected="True" rename="geometry" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="JupyterCode">
+        <Position x="582" y="534" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <WorkflowName>c:\users\sayan radnaev\documents\github_myrepo\gis-portfolio\telco_web_map\detailed_workflow_merged_29102024.yxmd</WorkflowName>
+          <JupyterProduction>false</JupyterProduction>
+          <vEnvName>designerbasetools_venv</vEnvName>
+          <DefaultVenv>1</DefaultVenv>
+          <productionModeScript>#################################
+# List all non-standard packages to be imported by your 
+# script here (only missing packages will be installed)
+from ayx import Package
+#Package.installPackages(['pandas','numpy'])
+
+
+#################################
+import pandas as pd  
+import json  
+import os  
+import re  
+from ayx import Alteryx  
+  
+# Step 1: Read the input data from the Alteryx workflow  
+df = Alteryx.read("#1")  # This reads the input dataset into a Pandas DataFrame  
+  
+# Step 2: Specify the path to the folder in your Documents directory  
+output_dir = os.path.expanduser(r'C:\Users\DE145780\Documents\WebMap_Automatisierung_28102024\TKU_Web_Map\data')  
+  
+# Ensure the output directory for JS files exists  
+if not os.path.exists(output_dir):  
+    os.makedirs(output_dir)  
+  
+# Function to sanitize company names for filenames (removing invalid characters and replacing umlauts)  
+def sanitize_filename(name):  
+    # Replace umlauts with their ASCII equivalents  
+    name = name.replace("ä", "ae").replace("ö", "oe").replace("ü", "ue").replace("ß", "ss")  
+      
+    # Replace any other special characters that could cause issues in filenames  
+    name = re.sub(r'[^a-zA-Z0-9_]', '_', name)  
+      
+    # Prepend 'n_' if the name starts with a numerical character  
+    if re.match(r'^\d', name):  
+        name = 'a_' + name  
+      
+    return name  
+  
+# Step 3: Group by 'anbieter_BBA' (company name) and create JavaScript files for each company  
+for anbieter, group in df.groupby('anbieter_BBA'):  
+    features = []  
+      
+    # Iterate over each row in the group (each company)  
+    for _, row in group.iterrows():  
+        feature = {  
+            "type": "Feature",  
+            "properties": {  
+                "fid": int(row.name),  # Unique identifier (could use index or another unique column)  
+                "AGS": row['AGS'],  
+                "GEN": row['GEN'],  
+                "Anbietername": row['anbieter_BBA'],  
+                "tku_id": row['tku_id']  
+            },  
+            # Convert the geometry field from a JSON string into a proper dictionary  
+            "geometry": json.loads(row['geometry'])  
+        }  
+        features.append(feature)  
+      
+    # Construct GeoJSON structure  
+    geojson = {  
+        "type": "FeatureCollection",  
+        "name": anbieter,  # Using the original company name as the 'name' field for the legend  
+        "crs": {  
+            "type": "name",  
+            "properties": {  
+                "name": "urn:ogc:def:crs:OGC:1.3:CRS84"  # Common GeoJSON coordinate reference system  
+            }  
+        },  
+        "features": features  
+    }  
+  
+    # Sanitize the company name for file creation  
+    sanitized_anbieter = sanitize_filename(anbieter)  
+  
+    # Create the JavaScript content with the prefix "json_"  
+    js_content = f"var json_{sanitized_anbieter} = {json.dumps(geojson)};"  
+  
+    # Write the JavaScript file  
+    file_name = os.path.join(output_dir, f"{sanitized_anbieter}.js")  
+    with open(file_name, 'w', encoding='utf-8') as js_file:  
+        js_file.write(js_content)  
+    
+    # If full DataFrame output isn't needed, use a minimal DataFrame for metadata
+    output_df = pd.DataFrame({"Status": ["JavaScript files created successfully"]})
+    
+    # Use Alteryx.write() to output the DataFrame or other summary data to Alteryx
+    Alteryx.write(output_df, 1)
+    
+    # Create output for connection #2 (e.g., Geopandas-related output or placeholder data)
+    df_geo = pd.DataFrame({"GeoStatus": ["Placeholder for Geopandas"]})
+    Alteryx.write(df_geo, 2)
+    
+  
+print("JavaScript files created successfully for all companies!")  
+
+
+
+#################################
+print(f"JavaScript files saved in: {os.path.abspath(output_dir)}")
+
+
+
+#################################
+import pandas as pd  
+import os
+import random
+import re
+from ayx import Alteryx  
+
+
+# Specify paths
+html_template_path = r'C:\Users\DE145780\Documents\WebMap_Automatisierung_28102024\TKU_Web_Map\PwC Visualisierung Ausbaukommunen.html'
+output_html_path = r'C:\Users\DE145780\Documents\WebMap_Automatisierung_28102024\TKU_Web_Map\PwC_aktualisierte_Kommunen.html'
+data_folder = r'C:\Users\DE145780\Documents\WebMap_Automatisierung_28102024\TKU_Web_Map\data'
+
+# Function to generate a random color in RGBA format
+def random_color():
+    return f"rgba({random.randint(0, 255)}, {random.randint(0, 255)}, {random.randint(0, 255)}, 1.0)"
+
+# Step 1: Read the existing HTML file
+with open(html_template_path, 'r', encoding='utf-8') as file:
+    html_content = file.read()
+
+# Step 2: Gather all company files from the "data" folder (excluding static layers)
+company_files = [f for f in os.listdir(data_folder) if f.endswith('.js') and f not in [
+    "Bundeslndergrenzen_2020_23.js", "VG250_KRS_24.js", "VG250_32632_25.js"]]
+
+# Prepare the new content to inject
+script_declarations = "\n".join([f"var json_{os.path.splitext(f)[0]} = null;" for f in company_files])
+script_includes = "\n".join([f'&lt;script src="data/{f}"&gt;&lt;/script&gt;' for f in company_files])
+
+layer_functions = ""
+layer_controls = ""
+for idx, file_name in enumerate(company_files):
+    company_var = os.path.splitext(file_name)[0]
+    layer_color = random_color()
+    fill_color = random_color()
+
+    layer_functions += f"""
+function style_{company_var}_{idx}() {{
+    return {{
+        pane: 'pane_{company_var}',
+        opacity: 1,
+        color: 'black',
+        dashArray: '',
+        lineCap: 'round',
+        lineJoin: 'round',
+        weight: 0.3,
+        fill: true,
+        fillOpacity: 0.5,
+        fillColor: '{fill_color}',
+        interactive: false,
+    }};
+}}
+map.createPane('pane_{company_var}');
+map.getPane('pane_{company_var}').style.zIndex = {400 + idx};
+var layer_{company_var} = new L.geoJson(json_{company_var}, {{
+    attribution: '',
+    interactive: false,
+    dataVar: 'json_{company_var}',
+    layerName: 'layer_{company_var}',
+    pane: 'pane_{company_var}',
+    style: style_{company_var}_{idx},
+}});
+"""
+    # Generate the display name by removing the prefix "a_" and replacing underscores with spaces
+    display_name = company_var.replace("a_", "", 1).replace("_", " ")
+
+    # Add the layer to the layer control, using the cleaned display name
+    layer_controls += f'layerControl.addOverlay(layer_{company_var}, "{display_name}", "TKU FTTB/H IST");\n'
+
+
+# Step 3: Update HTML content with new content using placeholders with start and end markers
+
+# Define a dictionary to hold the new content
+new_data = {
+    'script_declarations': script_declarations,
+    'script_includes': script_includes,
+    'layer_functions': layer_functions,
+    'layer_controls': layer_controls
+}
+
+# Define regex patterns with start and end markers for each section
+patterns = {
+    'script_declarations': re.compile(r'//PLACEHOLDER_SCRIPT_DECLARATIONS.*?//END_PLACEHOLDER_SCRIPT_DECLARATIONS', re.DOTALL),
+    'script_includes': re.compile(r'&lt;!--PLACEHOLDER_SCRIPT_INCLUDES--&gt;.*?&lt;!--END_PLACEHOLDER_SCRIPT_INCLUDES--&gt;', re.DOTALL),
+    'layer_functions': re.compile(r'//PLACEHOLDER_LAYER_FUNCTIONS.*?//END_PLACEHOLDER_LAYER_FUNCTIONS', re.DOTALL),
+    'layer_controls': re.compile(r'//PLACEHOLDER_LAYER_CONTROLS.*?//END_PLACEHOLDER_LAYER_CONTROLS', re.DOTALL)
+}
+
+# Replace each section in the HTML content with the new content
+html_content = re.sub(patterns['script_declarations'], f'//PLACEHOLDER_SCRIPT_DECLARATIONS\n{new_data["script_declarations"]}\n//END_PLACEHOLDER_SCRIPT_DECLARATIONS', html_content)
+html_content = re.sub(patterns['script_includes'], f'&lt;!--PLACEHOLDER_SCRIPT_INCLUDES--&gt;\n{new_data["script_includes"]}\n&lt;!--END_PLACEHOLDER_SCRIPT_INCLUDES--&gt;', html_content)
+html_content = re.sub(patterns['layer_functions'], f'//PLACEHOLDER_LAYER_FUNCTIONS\n{new_data["layer_functions"]}\n//END_PLACEHOLDER_LAYER_FUNCTIONS', html_content)
+html_content = re.sub(patterns['layer_controls'], f'//PLACEHOLDER_LAYER_CONTROLS\n{new_data["layer_controls"]}\n//END_PLACEHOLDER_LAYER_CONTROLS', html_content)
+
+# Step 4: Save the updated HTML file
+with open(output_html_path, 'w', encoding='utf-8') as file:
+    file.write(html_content)
+    
+print("HTML file updated successfully.")
+</productionModeScript>
+          <Port>64699</Port>
+          <JupyterGuidDir>c5b9d9e40c7779df8884f2857bc4f4ac</JupyterGuidDir>
+          <JupyterGuidCopy />
+          <LastExecutedByEngineVersion>2021.4.2.40860</LastExecutedByEngineVersion>
+          <Notebook><![CDATA[{"cells":[{"metadata":{"ayx":{"cell_class":"code_cell","cell_css":"border: 1px solid #58a; margin: 2px;","cell_type":"code","contents_keyword":"installPackages","first_line":"# List all non-standard packages to be imported by your","label":"deps"}},"cell_type":"code","source":["# List all non-standard packages to be imported by your \n","# script here (only missing packages will be installed)\n","from ayx import Package\n","#Package.installPackages(['pandas','numpy'])"],"execution_count":1,"outputs":[]},{"metadata":{"scrolled":true},"cell_type":"code","source":["#################################\n","# List all non-standard packages to be imported by your \n","# script here (only missing packages will be installed)\n","from ayx import Package\n","#Package.installPackages(['pandas','numpy'])\n","\n","\n","#################################\n","import pandas as pd  \n","import json  \n","import os  \n","import re  \n","from ayx import Alteryx  \n","\n","# Step 1: Read the input data from the Alteryx workflow\n","df = Alteryx.read(\"#1\")  # This reads the input dataset into a Pandas DataFrame  \n","\n","# Step 2: Specify the path to the folder in your Documents directory  \n","output_dir = os.path.expanduser(r'C:\\Users\\xx\\Documents\\GitHub_MyRepo\\GIS-Portfolio\\Telco_Web_Map\\data')  \n","\n","# Ensure the output directory for JS files exists  \n","if not os.path.exists(output_dir):  \n","    os.makedirs(output_dir)  \n","\n","# Function to sanitize company names for filenames (removing invalid characters and replacing umlauts)  \n","def sanitize_filename(name):  \n","    # Replace umlauts with their ASCII equivalents  \n","    name = name.replace(\"ä\", \"ae\").replace(\"ö\", \"oe\").replace(\"ü\", \"ue\").replace(\"ß\", \"ss\")  \n","    \n","    # Replace any other special characters that could cause issues in filenames  \n","    name = re.sub(r'[^a-zA-Z0-9_]', '_', name)  \n","    \n","    # Prepend 'a_' if the name starts with a numerical character  \n","    if re.match(r'^\\d', name):  \n","        name = 'a_' + name  \n","    \n","    return name\n","\n","# Step 3: Clear all old .js files in the output directory  \n","for f in os.listdir(output_dir):  \n","    if f.endswith('.js'):  \n","        os.remove(os.path.join(output_dir, f))\n","\n","# Step 4: Group by 'anbieter_BBA' (company name) and create JavaScript files for each company  \n","for anbieter, group in df.groupby('anbieter_BBA'):  \n","    features = []  \n","    \n","    # Iterate over each row in the group (each company)  \n","    for _, row in group.iterrows():  \n","        feature = {  \n","            \"type\": \"Feature\",  \n","            \"properties\": {  \n","                \"fid\": int(row.name),  # Unique identifier (could use index or another unique column)  \n","                \"AGS\": row['AGS'],  \n","                \"GEN\": row['GEN'],  \n","                \"Anbietername\": row['anbieter_BBA'],  \n","                \"tku_id\": row['tku_id']  \n","            },  \n","            # Convert the geometry field from a JSON string into a proper dictionary  \n","            \"geometry\": json.loads(row['geometry'])  \n","        }  \n","        features.append(feature)  \n","    \n","    # Construct GeoJSON structure  \n","    geojson = {  \n","        \"type\": \"FeatureCollection\",  \n","        \"name\": anbieter,  # Using the original company name as the 'name' field for the legend  \n","        \"crs\": {  \n","            \"type\": \"name\",  \n","            \"properties\": {  \n","                \"name\": \"urn:ogc:def:crs:OGC:1.3:CRS84\"  # Common GeoJSON coordinate reference system  \n","            }  \n","        },  \n","        \"features\": features  \n","    }  \n","    \n","    # Write the GeoJSON to a JavaScript file  \n","    js_content = f\"var json_{sanitize_filename(anbieter)} = {json.dumps(geojson)};\"  \n","    js_filename = os.path.join(output_dir, f\"{sanitize_filename(anbieter)}.js\")  \n","    \n","    with open(js_filename, 'w', encoding='utf-8') as js_file:  \n","        js_file.write(js_content)\n","\n","print(f\"JavaScript files saved in: {os.path.abspath(output_dir)}\")\n","\n","#################################\n","\n","# HTML update process\n","html_template_path = r'C:\\Users\\xx\\Documents\\GitHub_MyRepo\\GIS-Portfolio\\Telco_Web_Map\\Visualisierung Ausbaukommunen.html'\n","output_html_path = r'C:\\Users\\xx\\Documents\\GitHub_MyRepo\\GIS-Portfolio\\Telco_Web_Map\\aktualisierte_Kommunen.html'\n","data_folder = r'C:\\Users\\xx\\Documents\\GitHub_MyRepo\\GIS-Portfolio\\Telco_Web_Map\\data'\n","\n","# Function to generate a random color in RGBA format  \n","def random_color():  \n","    import random\n","    return f\"rgba({random.randint(0, 255)}, {random.randint(0, 255)}, {random.randint(0, 255)}, 1.0)\"\n","\n","# Step 5: Read the existing HTML file  \n","with open(html_template_path, 'r', encoding='utf-8') as file:  \n","    html_content = file.read()\n","\n","# Step 6: Gather all company files from the \"data\" folder (excluding static layers)  \n","company_files = [f for f in os.listdir(data_folder) if f.endswith('.js') and f not in [  \n","    \"Bundeslndergrenzen_2020_23.js\", \"VG250_KRS_24.js\", \"VG250_32632_25.js\"]]\n","\n","# Prepare the new content to inject  \n","script_declarations = \"\\n\".join([f\"var json_{os.path.splitext(f)[0]} = null;\" for f in company_files])  \n","script_includes = \"\\n\".join([f'<script src=\"data/{f}\"></script>' for f in company_files])  \n","\n","layer_functions = \"\"  \n","layer_controls = \"\"  \n","for idx, file_name in enumerate(company_files):  \n","    company_var = os.path.splitext(file_name)[0]  \n","    layer_color = random_color()  \n","    fill_color = random_color()  \n","\n","    layer_functions += f\"\"\"\\nfunction style_{company_var}_{idx}() {{\n","    return {{\n","        pane: 'pane_{company_var}',\n","        opacity: 1,\n","        color: 'black',\n","        dashArray: '',\n","        lineCap: 'round',\n","        lineJoin: 'round',\n","        weight: 0.3,\n","        fill: true,\n","        fillOpacity: 0.5,\n","        fillColor: '{fill_color}',\n","        interactive: false,\n","    }};\n","}}\n","map.createPane('pane_{company_var}');\n","map.getPane('pane_{company_var}').style.zIndex = {400 + idx};\n","var layer_{company_var} = new L.geoJson(json_{company_var}, {{\n","    attribution: '',\n","    interactive: false,\n","    dataVar: 'json_{company_var}',\n","    layerName: 'layer_{company_var}',\n","    pane: 'pane_{company_var}',\n","    style: style_{company_var}_{idx},\n","}});\"\"\"\n","\n","    # Generate the display name by removing the prefix \"a_\" and replacing underscores with spaces  \n","    display_name = company_var.replace(\"a_\", \"\", 1).replace(\"_\", \" \")  \n","    layer_controls += f'layerControl.addOverlay(layer_{company_var}, \"{display_name}\", \"TKU FTTB/H IST\");\\n'  \n","\n","# Step 7: Update HTML content with new content using placeholders with start and end markers  \n","new_data = {  \n","    'script_declarations': script_declarations,  \n","    'script_includes': script_includes,  \n","    'layer_functions': layer_functions,  \n","    'layer_controls': layer_controls  \n","}\n","\n","# Define regex patterns with start and end markers for each section  \n","patterns = {  \n","    'script_declarations': re.compile(r'//PLACEHOLDER_SCRIPT_DECLARATIONS.*?//END_PLACEHOLDER_SCRIPT_DECLARATIONS', re.DOTALL),  \n","    'script_includes': re.compile(r'<!--PLACEHOLDER_SCRIPT_INCLUDES-->.*?<!--END_PLACEHOLDER_SCRIPT_INCLUDES-->', re.DOTALL),  \n","    'layer_functions': re.compile(r'//PLACEHOLDER_LAYER_FUNCTIONS.*?//END_PLACEHOLDER_LAYER_FUNCTIONS', re.DOTALL),  \n","    'layer_controls': re.compile(r'//PLACEHOLDER_LAYER_CONTROLS.*?//END_PLACEHOLDER_LAYER_CONTROLS', re.DOTALL)  \n","}\n","\n","# Replace each section in the HTML content with the new content  \n","html_content = re.sub(patterns['script_declarations'], f'//PLACEHOLDER_SCRIPT_DECLARATIONS\\n{new_data[\"script_declarations\"]}\\n//END_PLACEHOLDER_SCRIPT_DECLARATIONS', html_content)  \n","html_content = re.sub(patterns['script_includes'], f'<!--PLACEHOLDER_SCRIPT_INCLUDES-->\\n{new_data[\"script_includes\"]}\\n<!--END_PLACEHOLDER_SCRIPT_INCLUDES-->', html_content)  \n","html_content = re.sub(patterns['layer_functions'], f'//PLACEHOLDER_LAYER_FUNCTIONS\\n{new_data[\"layer_functions\"]}\\n//END_PLACEHOLDER_LAYER_FUNCTIONS', html_content)  \n","html_content = re.sub(patterns['layer_controls'], f'//PLACEHOLDER_LAYER_CONTROLS\\n{new_data[\"layer_controls\"]}\\n//END_PLACEHOLDER_LAYER_CONTROLS', html_content)  \n","\n","# Step 8: Save the updated HTML file  \n","with open(output_html_path, 'w', encoding='utf-8') as file:  \n","    file.write(html_content)  \n","    \n","print(\"HTML file updated successfully.\")\n","\n"],"execution_count":2,"outputs":[]},{"metadata":{"scrolled":true},"cell_type":"code","source":[],"execution_count":3,"outputs":[]}],"metadata":{"kernelspec":{"name":"designerbasetools_venv","display_name":"designerbasetools_venv","language":"python"},"language_info":{"name":"python","version":"3.10.13","mimetype":"text/x-python","codemirror_mode":{"name":"ipython","version":3},"pygments_lexer":"ipython3","nbconvert_exporter":"python","file_extension":".py"}},"nbformat":4,"nbformat_minor":2}]]></Notebook>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxJupyterPluginEngine.dll" EngineDllEntryPoint="AlteryxJupyter" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BlockUntilDone.BlockUntilDone">
+        <Position x="486" y="462" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBlockUntilDone" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="102" y="582" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="1" />
+          <Fields>
+            <Field name="Thema" />
+            <Field name="Pfad" />
+          </Fields>
+          <Data>
+            <r>
+              <c>Geopandas Package</c>
+              <c>V:\Gigabit.NRW\B) Projektdurchführung\9. GigabitAtlas.NRW\4. Breitbandinformationsdienst\8. Web Maps\06_Geopandas\geopandas-0.10.2</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Pfad zu Geopandas</AnnotationText>
+          <DefaultAnnotationText>Pfad zu Geopandas</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="390" y="558" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Replace([Pfad], &quot;\&quot;, &quot;/&quot;)" field="Pfad" size="10000" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Im Pfad \ mit / ersetzen</AnnotationText>
+          <DefaultAnnotationText><![CDATA[Pfad = Replace([Pfad], "\", "/")
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="270" y="558" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Thema" selected="True" type="V_WString" size="10000" />
+            <SelectField field="Pfad" selected="True" type="V_WString" size="10000" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Zeichenanzahl hochsetzen</AnnotationText>
+          <DefaultAnnotationText>Zeichenanzahl hochsetzen</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="7" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="7" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="9" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Join" />
+      <Destination ToolID="9" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Join" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="24" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="24" Connection="Output2" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <IsTemplate value="False" />
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>detailed_workflow_merged_29102024</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="ec5dda91-00be-4e70-a7af-b2b9bcd7c3b5" />
+      <Telemetry>
+        <PreviousWorkflowId value="f81cb11e-9442-4d5f-ba10-2fbefbf587a9" />
+        <OriginWorkflowId value="d16b6591-1b9c-4a20-9d65-34c740893c25" />
+      </Telemetry>
+      <PlatformWorkflowId value="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

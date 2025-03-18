@@ -1,0 +1,1501 @@
+<!doctype html>
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css"><link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"><link rel="stylesheet" href="css/L.Control.Locate.min.css">
+        <link rel="stylesheet" href="css/qgis2web.css">
+        <link rel="stylesheet" href="css/MarkerCluster.css">
+        <link rel="stylesheet" href="css/MarkerCluster.Default.css">
+        <link rel="stylesheet" href="css/Gigabit.NRW.css">
+        <link rel="stylesheet" href="css/leaflet-search.css">
+        <link rel="stylesheet" href="css/leaflet-measure.css">
+        <link rel="stylesheet" href="css/leaflet-panel-layers.css">
+        <link rel="stylesheet" href="css/leaflet.groupedlayercontrol.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">GBL-SPOMIG-P003-SVC</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">6900.00000000000</mso:Order>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">GBL-SPOMIG-P003-SVC</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:_dlc_DocId msdt:dt="string">HUZZ65P4DRRZ-2103499467-28583</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">698b9882-e992-44c0-a85b-833f69c7484d</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://pwcdeu.sharepoint.com/sites/DE-SD-0AMOAanapHvcFUk9PVA/_layouts/15/DocIdRedir.aspx?ID=HUZZ65P4DRRZ-2103499467-28583, HUZZ65P4DRRZ-2103499467-28583</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+    <body>
+        <div id="map">
+        </div>
+
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script><script src="js/L.Control.Locate.min.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="js/leaflet-search.js"></script>
+        <script src="js/leaflet.markercluster.js"></script>
+        <script src="js/leaflet-panel-layers.js"></script>
+		<script src="js/Control.OSMGeocoder.js"></script>  
+	    <script src="js/leaflet-measure.js"></script>
+        <script src="js/leaflet.groupedlayercontrol.js"></script>
+
+        <script>
+
+            var json_Ruhrfibre_Essen_1 = null;
+            var json_Strategic_Fiber_Networks_2 = null;
+            var json_Glasfaser_Plus_3 = null;
+            var json_Deutsche_Glasfaser_4 = null;
+            var json_Deutsche_Giga_Access_5 = null;
+            var json_Westconnect_6 = null;
+            var json_Westenergie_7 = null;
+            var json_Plusnet_8 = null;
+            var json_DGN_9 = null;
+            var json_DNSNet_10 = null;
+            var json_Infrafibre_11 = null;
+            var json_TNG_12 = null;
+            var json_GVG_13 = null;
+            var json_Jobst_Net_14 = null;
+            var json_EFN_Eifel_Net_15 = null;
+            var json_Glasfaser_Direkt_16 = null;
+            var json_Sewikom_17 = null;
+            var json_Lnecom_18 = null;
+            var json_Northern_Fibre_Holding_19 = null;
+            var json_goetel_20 = null;
+            var json_BNT_und_Soco_21 = null;
+            var json_BNT_und_Soco_und_goetel_22 = null;
+	        var json_Telecolumbus_0 = null;
+	        var json_GlasfaserNordwest_1 = null;
+            var json_Bundeslndergrenzen_2020_23 = null;
+            var json_VG250_KRS_24 = null;
+            var json_VG250_32632_25 = null;
+            var json_bba_wettbewerb = null;
+            var json_bba_tng = null;
+            var json_bba_dgn = null;
+            var json_bba_dns = null;
+            var json_bba_infra = null;
+            var json_bba_glasnw = null;
+            var json_bba_telecolumbus = null;
+            var json_bba_stratfibre = null;
+            var json_bba_dtglas = null;
+            var json_bba_westconnect = null;
+
+        </script>
+
+        <script src="data/Ruhrfibre_Essen_1.js"></script>
+        <script src="data/Strategic_Fiber_Networks_2.js"></script>
+        <script src="data/Glasfaser_Plus_3.js"></script>
+        <script src="data/Deutsche_Glasfaser_4.js"></script>
+        <script src="data/Deutsche_Giga_Access_5.js"></script>
+        <script src="data/Westconnect_6.js"></script>
+        <script src="data/Westenergie_7.js"></script>
+        <script src="data/Plusnet_8.js"></script>
+        <script src="data/DGN_9.js"></script>
+        <script src="data/DNSNet_10.js"></script>
+        <script src="data/Infrafibre_11.js"></script>
+        <script src="data/TNG_12.js"></script>
+        <script src="data/GVG_13.js"></script>
+        <script src="data/Jobst_Net_14.js"></script>
+        <script src="data/EFN_Eifel_Net_15.js"></script>
+        <script src="data/Glasfaser_Direkt_16.js"></script>
+        <script src="data/Sewikom_17.js"></script>
+        <script src="data/Lnecom_18.js"></script>
+        <script src="data/Northern_Fibre_Holding_19.js"></script>
+        <script src="data/goetel_20.js"></script>
+        <script src="data/BNT_und_Soco_21.js"></script>
+        <script src="data/BNT_und_Soco_und_goetel_22.js"></script>
+        <script src="data/Telecolumbus_0.js"></script>
+	    <script src="data/GlasfaserNordwest_1.js"></script>
+        <script src="data/Bundeslndergrenzen_2020_23.js"></script>
+        <script src="data/VG250_KRS_24.js"></script>
+        <script src="data/VG250_32632_25.js"></script>
+        <script src="data/bba_wettbewerb.js"></script>
+        <script src="data/bba_tng.js"></script>
+        <script src="data/bba_dgn.js"></script>
+        <script src="data/bba_dns.js"></script>
+        <script src="data/bba_infra.js"></script>
+        <script src="data/bba_glasnw.js"></script>
+        <script src="data/bba_telecolumbus.js"></script>
+        <script src="data/bba_stratfibre.js"></script>
+        <script src="data/bba_dtglas.js"></script>
+        <script src="data/bba_westconnect.js"></script>
+        <script src="js/leaflet.browser.print.js"></script>
+        <script src="js/leaflet.browser.print.utils.js"></script>
+        <script src="js/leaflet.browser.print.sizes.js"></script>
+        <script>
+
+
+//=========================================================================================================================================================================
+//====================== Hintergrund Layer ================================================================================================================================
+
+var highlightLayer;
+        function highlightFeature(e) {
+            highlightLayer = e.target;
+            highlightLayer.openPopup();
+        }
+        var map = L.map('map', {
+            zoomControl:false, 
+            maxZoom:21, 
+            minZoom:1,
+            zoomSnap: 0
+        })
+
+        var hash = new L.Hash(map);
+
+        var bounds_group = new L.featureGroup([]);
+
+        var basemaps = {
+            OpenStreetMap: L.tileLayer(
+                'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                {
+                    attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a>',
+                    maxZoom: 22,
+                    maxNativeZoom: 19,
+                    opacity: 0.5,
+                }
+            ),
+            Google_Maps: L.tileLayer.wms(
+                'https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',
+                {
+
+                }
+            ) 
+        };
+
+        var basemap0 = {};
+
+
+
+        basemaps.OpenStreetMap.addTo(map);
+
+        function setBounds() {
+
+            if (bounds_group.getLayers().length) {
+                map.fitBounds(bounds_group.getBounds());
+            }
+            var southWest = L.latLng(map.getBounds().getSouthWest().lat.toFixed(3), map.getBounds().getSouthWest().lng.toFixed(3));
+            var northEast = L.latLng(map.getBounds().getNorthEast().lat.toFixed(3), map.getBounds().getNorthEast().lng.toFixed(3));
+            var newBounds = L.latLngBounds(southWest, northEast);
+            map.setMaxBounds(newBounds);
+        }
+
+
+//=========================================================================================================================================================================
+//====================== Layer Control - Textbox ==========================================================================================================================
+
+L.Control.Infobox = L.Control.extend(
+                {
+                    options:
+                    {
+                        position: 'topleft',
+                    },
+                    onAdd: function (map) {
+                        var controlDiv = L.DomUtil.create('div', 'leaflet-control-layers leaflet-control-layers-expanded leaflet-control');
+
+                        var controlFormHeading = L.DomUtil.create('form', 'leaflet-control-layers-list', controlDiv);
+                        var controlDivHeading = L.DomUtil.create('div', 'leaflet-control-layers-overlays', controlFormHeading);
+                        var controlLabelHeading = L.DomUtil.create('label', '', controlDivHeading);
+                        var controlDivInsideHeading = L.DomUtil.create('div', '', controlLabelHeading);
+
+                        var controlSpanHeading = L.DomUtil.create('span', '', controlDivInsideHeading);
+                        controlSpanHeading.innerHTML = "";
+
+                        var controlDivInfobox_hinweis = L.DomUtil.create('div', '', controlDiv);
+                        controlDivInfobox_hinweis.innerHTML = '<b>Visualisierung von Ausbaukommunen einzelner Telekommunikationsunternehmen</b>';
+                        return controlDiv;
+                    },
+                });
+        
+                var Infobox = new L.Control.Infobox();
+                map.addControl(Infobox);
+
+//=========================================================================================================================================================================
+//====================== Zoom Control =====================================================================================================================================
+
+    L.control.zoom({
+    position: 'topleft'
+        }).addTo(map);
+
+//=========================================================================================================================================================================
+//====================== Layers =====================================================================================================================================
+
+
+        function style_Ruhrfibre_Essen_1_0() {
+            return {
+                pane: 'pane_Ruhrfibre_Essen_1',
+                opacity: 1,
+                color: 'rgba(0,255,215,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,255,215,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_Ruhrfibre_Essen_1');
+        map.getPane('pane_Ruhrfibre_Essen_1').style.zIndex = 401;
+        map.getPane('pane_Ruhrfibre_Essen_1').style['mix-blend-mode'] = 'normal';
+        var layer_Ruhrfibre_Essen_1 = new L.geoJson(json_Ruhrfibre_Essen_1, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_Ruhrfibre_Essen_1',
+            layerName: 'layer_Ruhrfibre_Essen_1',
+            pane: 'pane_Ruhrfibre_Essen_1',
+            style: style_Ruhrfibre_Essen_1_0,
+        });
+
+        //map.addLayer(layer_Ruhrfibre_Essen_1);
+
+        function style_Strategic_Fiber_Networks_2_0() {
+            return {
+                pane: 'pane_Strategic_Fiber_Networks_2',
+                opacity: 1,
+                color: 'rgba(24,179,245,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(24,179,245,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_Strategic_Fiber_Networks_2');
+        map.getPane('pane_Strategic_Fiber_Networks_2').style.zIndex = 402;
+        map.getPane('pane_Strategic_Fiber_Networks_2').style['mix-blend-mode'] = 'normal';
+        var layer_Strategic_Fiber_Networks_2 = new L.geoJson(json_Strategic_Fiber_Networks_2, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_Strategic_Fiber_Networks_2',
+            layerName: 'layer_Strategic_Fiber_Networks_2',
+            pane: 'pane_Strategic_Fiber_Networks_2',
+            style: style_Strategic_Fiber_Networks_2_0,
+        });
+
+
+        function style_Glasfaser_Plus_3_0() {
+            return {
+                pane: 'pane_Glasfaser_Plus_3',
+                opacity: 1,
+                color: 'rgba(38,62,92,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(38,62,92,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_Glasfaser_Plus_3');
+        map.getPane('pane_Glasfaser_Plus_3').style.zIndex = 403;
+        map.getPane('pane_Glasfaser_Plus_3').style['mix-blend-mode'] = 'normal';
+        var layer_Glasfaser_Plus_3 = new L.geoJson(json_Glasfaser_Plus_3, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_Glasfaser_Plus_3',
+            layerName: 'layer_Glasfaser_Plus_3',
+            pane: 'pane_Glasfaser_Plus_3',
+            style: style_Glasfaser_Plus_3_0,
+        });
+
+
+        function style_Deutsche_Glasfaser_4_0() {
+            return {
+                pane: 'pane_Deutsche_Glasfaser_4',
+                opacity: 1,
+                color: 'rgba(20,160,220,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(20,160,220,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_Deutsche_Glasfaser_4');
+        map.getPane('pane_Deutsche_Glasfaser_4').style.zIndex = 404;
+        map.getPane('pane_Deutsche_Glasfaser_4').style['mix-blend-mode'] = 'normal';
+        var layer_Deutsche_Glasfaser_4 = new L.geoJson(json_Deutsche_Glasfaser_4, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_Deutsche_Glasfaser_4',
+            layerName: 'layer_Deutsche_Glasfaser_4',
+            pane: 'pane_Deutsche_Glasfaser_4',
+            style: style_Deutsche_Glasfaser_4_0,
+        });
+
+
+        function style_Deutsche_Giga_Access_5_0() {
+            return {
+                pane: 'pane_Deutsche_Giga_Access_5',
+                opacity: 1,
+                color: 'rgba(20,163,185,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(20,163,185,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_Deutsche_Giga_Access_5');
+        map.getPane('pane_Deutsche_Giga_Access_5').style.zIndex = 405;
+        map.getPane('pane_Deutsche_Giga_Access_5').style['mix-blend-mode'] = 'normal';
+        var layer_Deutsche_Giga_Access_5 = new L.geoJson(json_Deutsche_Giga_Access_5, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_Deutsche_Giga_Access_5',
+            layerName: 'layer_Deutsche_Giga_Access_5',
+            pane: 'pane_Deutsche_Giga_Access_5',
+            style: style_Deutsche_Giga_Access_5_0,
+        });
+
+
+        function style_Westconnect_6_0() {
+            return {
+                pane: 'pane_Westconnect_6',
+                opacity: 1,
+                color: 'rgba(239,76,10,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(239,76,10,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_Westconnect_6');
+        map.getPane('pane_Westconnect_6').style.zIndex = 406;
+        map.getPane('pane_Westconnect_6').style['mix-blend-mode'] = 'normal';
+        var layer_Westconnect_6 = new L.geoJson(json_Westconnect_6, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_Westconnect_6',
+            layerName: 'layer_Westconnect_6',
+            pane: 'pane_Westconnect_6',
+            style: style_Westconnect_6_0,
+        });
+
+
+        function style_Westenergie_7_0() {
+            return {
+                pane: 'pane_Westenergie_7',
+                opacity: 1,
+                color: 'rgba(255,195,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,195,0,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_Westenergie_7');
+        map.getPane('pane_Westenergie_7').style.zIndex = 407;
+        map.getPane('pane_Westenergie_7').style['mix-blend-mode'] = 'normal';
+        var layer_Westenergie_7 = new L.geoJson(json_Westenergie_7, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_Westenergie_7',
+            layerName: 'layer_Westenergie_7',
+            pane: 'pane_Westenergie_7',
+            style: style_Westenergie_7_0,
+        });
+
+
+        function style_Plusnet_8_0() {
+            return {
+                pane: 'pane_Plusnet_8',
+                opacity: 1,
+                color: 'rgba(150,20,75,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(150,20,75,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_Plusnet_8');
+        map.getPane('pane_Plusnet_8').style.zIndex = 408;
+        map.getPane('pane_Plusnet_8').style['mix-blend-mode'] = 'normal';
+        var layer_Plusnet_8 = new L.geoJson(json_Plusnet_8, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_Plusnet_8',
+            layerName: 'layer_Plusnet_8',
+            pane: 'pane_Plusnet_8',
+            style: style_Plusnet_8_0,
+        });
+
+
+        function style_DGN_9_0() {
+            return {
+                pane: 'pane_DGN_9',
+                opacity: 1,
+                color: 'rgba(253,140,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(253,140,0,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_DGN_9');
+        map.getPane('pane_DGN_9').style.zIndex = 409;
+        map.getPane('pane_DGN_9').style['mix-blend-mode'] = 'normal';
+        var layer_DGN_9 = new L.geoJson(json_DGN_9, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_DGN_9',
+            layerName: 'layer_DGN_9',
+            pane: 'pane_DGN_9',
+            style: style_DGN_9_0,
+        });
+
+
+        function style_DNSNet_10_0() {
+            return {
+                pane: 'pane_DNSNet_10',
+                opacity: 1,
+                color: 'rgba(236,102,10,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(236,102,10,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_DNSNet_10');
+        map.getPane('pane_DNSNet_10').style.zIndex = 410;
+        map.getPane('pane_DNSNet_10').style['mix-blend-mode'] = 'normal';
+        var layer_DNSNet_10 = new L.geoJson(json_DNSNet_10, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_DNSNet_10',
+            layerName: 'layer_DNSNet_10',
+            pane: 'pane_DNSNet_10',
+            style: style_DNSNet_10_0,
+        });
+
+
+        function style_Infrafibre_11_0() {
+            return {
+                pane: 'pane_Infrafibre_11',
+                opacity: 1,
+                color: 'rgba(0,67,154,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,67,154,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_Infrafibre_11');
+        map.getPane('pane_Infrafibre_11').style.zIndex = 411;
+        map.getPane('pane_Infrafibre_11').style['mix-blend-mode'] = 'normal';
+        var layer_Infrafibre_11 = new L.geoJson(json_Infrafibre_11, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_Infrafibre_11',
+            layerName: 'layer_Infrafibre_11',
+            pane: 'pane_Infrafibre_11',
+            style: style_Infrafibre_11_0,
+        });
+
+        function style_TNG_12_0() {
+            return {
+                pane: 'pane_TNG_12',
+                opacity: 1,
+                color: 'rgba(0,50,110,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,50,110,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_TNG_12');
+        map.getPane('pane_TNG_12').style.zIndex = 412;
+        map.getPane('pane_TNG_12').style['mix-blend-mode'] = 'normal';
+        var layer_TNG_12 = new L.geoJson(json_TNG_12, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_TNG_12',
+            layerName: 'layer_TNG_12',
+            pane: 'pane_TNG_12',
+            style: style_TNG_12_0,
+        });
+
+
+        function style_GVG_13_0() {
+            return {
+                pane: 'pane_GVG_13',
+                opacity: 1,
+                color: 'rgba(222,187,120,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(222,187,120,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_GVG_13');
+        map.getPane('pane_GVG_13').style.zIndex = 413;
+        map.getPane('pane_GVG_13').style['mix-blend-mode'] = 'normal';
+        var layer_GVG_13 = new L.geoJson(json_GVG_13, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_GVG_13',
+            layerName: 'layer_GVG_13',
+            pane: 'pane_GVG_13',
+            style: style_GVG_13_0,
+        });
+
+
+        function style_Jobst_Net_14_0() {
+            return {
+                pane: 'pane_Jobst_Net_14',
+                opacity: 1,
+                color: 'rgba(118,183,43,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(118,183,43,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_Jobst_Net_14');
+        map.getPane('pane_Jobst_Net_14').style.zIndex = 414;
+        map.getPane('pane_Jobst_Net_14').style['mix-blend-mode'] = 'normal';
+        var layer_Jobst_Net_14 = new L.geoJson(json_Jobst_Net_14, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_Jobst_Net_14',
+            layerName: 'layer_Jobst_Net_14',
+            pane: 'pane_Jobst_Net_14',
+            style: style_Jobst_Net_14_0,
+        });
+
+
+        function style_EFN_Eifel_Net_15_0() {
+            return {
+                pane: 'pane_EFN_Eifel_Net_15',
+                opacity: 1,
+                color: 'rgba(118,183,43,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(118,183,43,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_EFN_Eifel_Net_15');
+        map.getPane('pane_EFN_Eifel_Net_15').style.zIndex = 415;
+        map.getPane('pane_EFN_Eifel_Net_15').style['mix-blend-mode'] = 'normal';
+        var layer_EFN_Eifel_Net_15 = new L.geoJson(json_EFN_Eifel_Net_15, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_EFN_Eifel_Net_15',
+            layerName: 'layer_EFN_Eifel_Net_15',
+            pane: 'pane_EFN_Eifel_Net_15',
+            style: style_EFN_Eifel_Net_15_0,
+        });
+
+
+        function style_Glasfaser_Direkt_16_0() {
+            return {
+                pane: 'pane_Glasfaser_Direkt_16',
+                opacity: 1,
+                color: 'rgba(118,183,43,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(118,183,43,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_Glasfaser_Direkt_16');
+        map.getPane('pane_Glasfaser_Direkt_16').style.zIndex = 416;
+        map.getPane('pane_Glasfaser_Direkt_16').style['mix-blend-mode'] = 'normal';
+        var layer_Glasfaser_Direkt_16 = new L.geoJson(json_Glasfaser_Direkt_16, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_Glasfaser_Direkt_16',
+            layerName: 'layer_Glasfaser_Direkt_16',
+            pane: 'pane_Glasfaser_Direkt_16',
+            style: style_Glasfaser_Direkt_16_0,
+        });
+
+
+        function style_Sewikom_17_0() {
+            return {
+                pane: 'pane_Sewikom_17',
+                opacity: 1,
+                color: 'rgba(84,84,84,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(84,84,84,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_Sewikom_17');
+        map.getPane('pane_Sewikom_17').style.zIndex = 417;
+        map.getPane('pane_Sewikom_17').style['mix-blend-mode'] = 'normal';
+        var layer_Sewikom_17 = new L.geoJson(json_Sewikom_17, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_Sewikom_17',
+            layerName: 'layer_Sewikom_17',
+            pane: 'pane_Sewikom_17',
+            style: style_Sewikom_17_0,
+        });
+
+
+        function style_Lnecom_18_0() {
+            return {
+                pane: 'pane_Lnecom_18',
+                opacity: 1,
+                color: 'rgba(84,84,84,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(84,84,84,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_Lnecom_18');
+        map.getPane('pane_Lnecom_18').style.zIndex = 418;
+        map.getPane('pane_Lnecom_18').style['mix-blend-mode'] = 'normal';
+        var layer_Lnecom_18 = new L.geoJson(json_Lnecom_18, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_Lnecom_18',
+            layerName: 'layer_Lnecom_18',
+            pane: 'pane_Lnecom_18',
+            style: style_Lnecom_18_0,
+        });
+
+
+        function style_Northern_Fibre_Holding_19_0() {
+            return {
+                pane: 'pane_Northern_Fibre_Holding_19',
+                opacity: 1,
+                color: 'rgba(84,84,84,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(84,84,84,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_Northern_Fibre_Holding_19');
+        map.getPane('pane_Northern_Fibre_Holding_19').style.zIndex = 419;
+        map.getPane('pane_Northern_Fibre_Holding_19').style['mix-blend-mode'] = 'normal';
+        var layer_Northern_Fibre_Holding_19 = new L.geoJson(json_Northern_Fibre_Holding_19, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_Northern_Fibre_Holding_19',
+            layerName: 'layer_Northern_Fibre_Holding_19',
+            pane: 'pane_Northern_Fibre_Holding_19',
+            style: style_Northern_Fibre_Holding_19_0,
+        });
+
+
+        function style_goetel_20_0() {
+            return {
+                pane: 'pane_goetel_20',
+                opacity: 1,
+                color: 'rgba(132,182,211,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(132,182,211,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_goetel_20');
+        map.getPane('pane_goetel_20').style.zIndex = 420;
+        map.getPane('pane_goetel_20').style['mix-blend-mode'] = 'normal';
+        var layer_goetel_20 = new L.geoJson(json_goetel_20, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_goetel_20',
+            layerName: 'layer_goetel_20',
+            pane: 'pane_goetel_20',
+            style: style_goetel_20_0,
+        });
+
+
+        function style_BNT_und_Soco_21_0() {
+            return {
+                pane: 'pane_BNT_und_Soco_21',
+                opacity: 1,
+                color: 'rgba(132,182,211,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(132,182,211,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_BNT_und_Soco_21');
+        map.getPane('pane_BNT_und_Soco_21').style.zIndex = 421;
+        map.getPane('pane_BNT_und_Soco_21').style['mix-blend-mode'] = 'normal';
+        var layer_BNT_und_Soco_21 = new L.geoJson(json_BNT_und_Soco_21, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_BNT_und_Soco_21',
+            layerName: 'layer_BNT_und_Soco_21',
+            pane: 'pane_BNT_und_Soco_21',
+            style: style_BNT_und_Soco_21_0,
+        });
+
+
+        function style_BNT_und_Soco_und_goetel_22_0() {
+            return {
+                pane: 'pane_BNT_und_Soco_und_goetel_22',
+                opacity: 1,
+                color: 'rgba(132,182,211,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(132,182,211,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_BNT_und_Soco_und_goetel_22');
+        map.getPane('pane_BNT_und_Soco_und_goetel_22').style.zIndex = 422;
+        map.getPane('pane_BNT_und_Soco_und_goetel_22').style['mix-blend-mode'] = 'normal';
+        var layer_BNT_und_Soco_und_goetel_22 = new L.geoJson(json_BNT_und_Soco_und_goetel_22, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_BNT_und_Soco_und_goetel_22',
+            layerName: 'layer_BNT_und_Soco_und_goetel_22',
+            pane: 'pane_BNT_und_Soco_und_goetel_22',
+            style: style_BNT_und_Soco_und_goetel_22_0,
+        });
+
+        function style_Telecolumbus_0() {
+            return {
+                pane: 'pane_Telecolumbus_0',
+                opacity: 1,
+                color: 'rgba(0,35,117,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,35,117,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_Telecolumbus_0');
+        map.getPane('pane_Telecolumbus_0').style.zIndex = 422;
+        map.getPane('pane_Telecolumbus_0').style['mix-blend-mode'] = 'normal';
+        var layer_Telecolumbus_0 = new L.geoJson(json_Telecolumbus_0, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_Telecolumbus_0',
+            layerName: 'layer_Telecolumbus_0',
+            pane: 'pane_Telecolumbus_0',
+            style: style_Telecolumbus_0,
+        });
+
+       function style_GlasfaserNordwest_1() {
+            return {
+                pane: 'pane_GlasfaserNordwest_1',
+                opacity: 1,
+                color: 'rgba(247,202,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(247,202,0,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_GlasfaserNordwest_1');
+        map.getPane('pane_GlasfaserNordwest_1').style.zIndex = 422;
+        map.getPane('pane_GlasfaserNordwest_1').style['mix-blend-mode'] = 'normal';
+        var layer_GlasfaserNordwest_1 = new L.geoJson(json_GlasfaserNordwest_1, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_GlasfaserNordwest_1',
+            layerName: 'layer_GlasfaserNordwest_1',
+            pane: 'pane_GlasfaserNordwest_1',
+            style: style_GlasfaserNordwest_1,
+        });
+
+        function style_bba_wettbewerb(feature) {
+            switch(String(feature.properties['Wett'])) {
+                case '0':
+                    return {
+                pane: 'pane_bba_wettbewerb',
+                stroke: false, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(252,255,197,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '1':
+                    return {
+                pane: 'pane_bba_wettbewerb',
+                stroke: false, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,64,254,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '2':
+                    return {
+                pane: 'pane_bba_wettbewerb',
+                stroke: false, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(100,225,89,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '3':
+                    return {
+                pane: 'pane_bba_wettbewerb',
+                stroke: false, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(254,0,21,1.0)',
+                interactive: true,
+            }
+                    break;
+            }
+        };
+
+        map.createPane('pane_bba_wettbewerb');
+        map.getPane('pane_bba_wettbewerb').style.zIndex = 423;
+        map.getPane('pane_bba_wettbewerb').style['mix-blend-mode'] = 'normal';
+        var layer_bba_wettbewerb = new L.geoJson(json_bba_wettbewerb, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_bba_wettbewerb',
+            layerName: 'layer_bba_wettbewerb',
+            pane: 'pane_bba_wettbewerb',
+            //onEachFeature: pop_AnzahlanTKU_1,
+            style: style_bba_wettbewerb,
+        });
+
+
+        function style_bba_tng() {
+            return {
+                pane: 'pane_bba_tng',
+                opacity: 1.0,
+                color: 'rgba(0,50,110,1.0)',
+                dashArray: '0 4 0',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 0.5,
+                fillColor: 'rgba(0,50,110,1.0)',
+                interactive: false,
+            }
+        }
+        
+        map.createPane('pane_bba_tng');
+        map.getPane('pane_bba_tng').style.zIndex = 424;
+        map.getPane('pane_bba_tng').style['mix-blend-mode'] = 'normal';
+        var layer_bba_tng = new L.geoJson(json_bba_tng, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_bba_tng',
+            layerName: 'layer_bba_tng',
+            pane: 'pane_bba_tng',
+            style: style_bba_tng,
+        });
+
+        function style_bba_infra() {
+            return {
+                pane: 'pane_bba_infra',
+                opacity: 1,
+                color: 'rgba(0,67,154,1.0)',
+                dashArray: '0 4 0',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 0.5,
+                fillColor: 'rgba(0,67,154,1.0)',
+                interactive: false,
+            }
+        }
+
+        map.createPane('pane_bba_infra');
+        map.getPane('pane_bba_infra').style.zIndex = 425;
+        map.getPane('pane_bba_infra').style['mix-blend-mode'] = 'normal';
+        var layer_bba_infra = new L.geoJson(json_bba_infra, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_bba_infra',
+            layerName: 'layer_bba_infra',
+            pane: 'pane_bba_infra',
+            style: style_bba_infra,
+        });
+
+        function style_bba_dns() {
+            return {
+                pane: 'pane_bba_dns',
+                opacity: 1,
+                color: 'rgba(236,102,10,1.0)',
+                dashArray: '0 4 0',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 0.5,
+                fillColor: 'rgba(236,102,10,1.0)',
+                interactive: false,
+            }
+        }
+
+        map.createPane('pane_bba_dns');
+        map.getPane('pane_bba_dns').style.zIndex = 426;
+        map.getPane('pane_bba_dns').style['mix-blend-mode'] = 'normal';
+        var layer_bba_dns = new L.geoJson(json_bba_dns, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_bba_dns',
+            layerName: 'layer_bba_dns',
+            pane: 'pane_bba_dns',
+            style: style_bba_dns,
+        });
+
+        function style_bba_dgn() {
+            return {
+                pane: 'pane_bba_dgn',
+                opacity: 1,
+                color: 'rgba(253,140,0,1.0)',
+                dashArray: '0 4 0',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 0.5,
+                fillColor: 'rgba(253,140,0,1.0)',
+                interactive: false,
+            }
+        }
+
+        map.createPane('pane_bba_dgn');
+        map.getPane('pane_bba_dgn').style.zIndex = 427;
+        map.getPane('pane_bba_dgn').style['mix-blend-mode'] = 'normal';
+        var layer_bba_dgn = new L.geoJson(json_bba_dgn, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_bba_dgn',
+            layerName: 'layer_bba_dgn',
+            pane: 'pane_bba_dgn',
+            style: style_bba_dgn,
+        });
+
+        function style_bba_westconnect() {
+            return {
+                pane: 'pane_bba_westconnect',
+                opacity: 1,
+                color: 'rgba(239,76,10,1.0)',
+                dashArray: '0 4 0',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 0.5,
+                fillColor: 'rgba(239,76,10,1.0)',
+                interactive: false,
+            }
+        }
+
+        map.createPane('pane_bba_westconnect');
+        map.getPane('pane_bba_westconnect').style.zIndex = 428;
+        map.getPane('pane_bba_westconnect').style['mix-blend-mode'] = 'normal';
+        var layer_bba_westconnect = new L.geoJson(json_bba_westconnect, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_bba_westconnect',
+            layerName: 'layer_bba_westconnect',
+            pane: 'pane_bba_westconnect',
+            style: style_bba_westconnect,
+        });
+
+        function style_bba_dtglas() {
+            return {
+                pane: 'pane_bba_dtglas',
+                opacity: 1,
+                color: 'rgba(20,160,220,1.0)',
+                dashArray: '0 4 0',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 0.5,
+                fillColor: 'rgba(20,160,220,1.0)',
+                interactive: false,
+            }
+        }
+
+        map.createPane('pane_bba_dtglas');
+        map.getPane('pane_bba_dtglas').style.zIndex = 429;
+        map.getPane('pane_bba_dtglas').style['mix-blend-mode'] = 'normal';
+        var layer_bba_dtglas = new L.geoJson(json_bba_dtglas, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_bba_dtglas',
+            layerName: 'layer_bba_dtglas',
+            pane: 'pane_bba_dtglas',
+            style: style_bba_dtglas,
+        });
+
+        function style_bba_stratfibre() {
+            return {
+                pane: 'pane_bba_stratfibre',
+                opacity: 1,
+                color: 'rgba(24,179,245,1.0)',
+                dashArray: '0 4 0',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 0.5,
+                fillColor: 'rgba(24,179,245,1.0)',
+                interactive: false,
+            }
+        }
+
+        map.createPane('pane_bba_stratfibre');
+        map.getPane('pane_bba_stratfibre').style.zIndex = 430;
+        map.getPane('pane_bba_stratfibre').style['mix-blend-mode'] = 'normal';
+        var layer_bba_stratfibre = new L.geoJson(json_bba_stratfibre, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_bba_stratfibre',
+            layerName: 'layer_bba_stratfibre',
+            pane: 'pane_bba_stratfibre',
+            style: style_bba_stratfibre,
+        });
+
+        function style_bba_telecolumbus() {
+            return {
+                pane: 'pane_bba_telecolumbus',
+                opacity: 1,
+                color: 'rgba(0,35,117,1.0)',
+                dashArray: '0 4 0',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 0.5,
+                fillColor: 'rgba(0,35,117,1.0)',
+                interactive: false,
+            }
+        }
+
+        map.createPane('pane_bba_telecolumbus');
+        map.getPane('pane_bba_telecolumbus').style.zIndex = 431;
+        map.getPane('pane_bba_telecolumbus').style['mix-blend-mode'] = 'normal';
+        var layer_bba_telecolumbus = new L.geoJson(json_bba_telecolumbus, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_bba_telecolumbus',
+            layerName: 'layer_bba_telecolumbus',
+            pane: 'pane_bba_telecolumbus',
+            style: style_bba_telecolumbus,
+        });
+
+        function style_bba_glasnw() {
+            return {
+                pane: 'pane_bba_glasnw',
+                opacity: 1,
+                color: 'rgba(247,202,0,1.0)',
+                dashArray: '0 4 0',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 0.5,
+                fillColor: 'rgba(247,202,0,1.0)',
+                interactive: false,
+            }
+        }
+
+        map.createPane('pane_bba_glasnw');
+        map.getPane('pane_bba_glasnw').style.zIndex = 432;
+        map.getPane('pane_bba_glasnw').style['mix-blend-mode'] = 'normal';
+        var layer_bba_glasnw = new L.geoJson(json_bba_glasnw, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_bba_glasnw',
+            layerName: 'layer_bba_glasnw',
+            pane: 'pane_bba_glasnw',
+            style: style_bba_glasnw,
+        });
+
+
+        function style_Bundeslndergrenzen_2020_23_0() {
+            return {
+                pane: 'pane_Bundeslndergrenzen_2020_23',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(190,207,80,0.0)',
+                interactive: true,
+            }
+        }
+
+        map.createPane('pane_Bundeslndergrenzen_2020_23');
+        map.getPane('pane_Bundeslndergrenzen_2020_23').style.zIndex = 433;
+        map.getPane('pane_Bundeslndergrenzen_2020_23').style['mix-blend-mode'] = 'normal';
+        var layer_Bundeslndergrenzen_2020_23 = new L.geoJson(json_Bundeslndergrenzen_2020_23, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Bundeslndergrenzen_2020_23',
+            layerName: 'layer_Bundeslndergrenzen_2020_23',
+            pane: 'pane_Bundeslndergrenzen_2020_23',
+            style: style_Bundeslndergrenzen_2020_23_0,
+        });
+        bounds_group.addLayer(layer_Bundeslndergrenzen_2020_23);
+        map.addLayer(layer_Bundeslndergrenzen_2020_23);
+
+        function pop_VG250_KRS_24_0(feature, layer) {
+
+            var popupContent = '<table>\
+			        <tr>\
+                        <th scope="row"><b>Landkreis</b></th>\
+                    </tr>\
+                    <tr>\
+                        <td>' + (feature.properties['GEN'] !== null ? Autolinker.link(String(feature.properties['GEN'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+        function style_VG250_KRS_24_0() {
+            return {
+                pane: 'pane_VG250_KRS_24',
+                opacity: 1,
+                color: 'rgba(50,50,50,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 0.3, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(190,207,80,0.0)',
+            }
+        }
+        map.createPane('pane_VG250_KRS_24');
+        map.getPane('pane_VG250_KRS_24').style.zIndex = 434;
+        map.getPane('pane_VG250_KRS_24').style['mix-blend-mode'] = 'normal';
+
+        var layer_VG250_KRS_24 = new L.geoJson(json_VG250_KRS_24, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_VG250_KRS_24',
+            layerName: 'layer_VG250_KRS_24',
+            pane: 'pane_VG250_KRS_24',
+            onEachFeature: pop_VG250_KRS_24_0,
+            style: style_VG250_KRS_24_0,
+            
+        });
+
+        map.addLayer(layer_VG250_KRS_24);
+
+        function style_VG250_32632_25_0() {
+            return {
+                pane: 'pane_VG250_32632_25',
+                opacity: 1,
+                color: 'rgba(50,50,50,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 0.1, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(190,207,80,0.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_VG250_32632_25');
+        map.getPane('pane_VG250_32632_25').style.zIndex = 435;
+        map.getPane('pane_VG250_32632_25').style['mix-blend-mode'] = 'normal';
+        var layer_VG250_32632_25 = new L.geoJson(json_VG250_32632_25, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_VG250_32632_25',
+            layerName: 'layer_VG250_32632_25',
+            pane: 'pane_VG250_32632_25',
+            style: style_VG250_32632_25_0,
+        });
+
+        function pop_bba_wettbewerb(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Anbietername</th>\
+                        <td>' + (feature.properties['Anbietername'] !== null ? autolinker.link(feature.properties['Anbietername'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">FTTH</th>\
+                        <td>' + (feature.properties['FTTH'] !== null ? autolinker.link(feature.properties['FTTH'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">FTTB</th>\
+                        <td>' + (feature.properties['FTTB'] !== null ? autolinker.link(feature.properties['FTTB'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">FTTC</th>\
+                        <td>' + (feature.properties['FTTC'] !== null ? autolinker.link(feature.properties['FTTC'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">HFC</th>\
+                        <td>' + (feature.properties['HFC'] !== null ? autolinker.link(feature.properties['HFC'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Sonstige</th>\
+                        <td>' + (feature.properties['Sonstige'] !== null ? autolinker.link(feature.properties['Sonstige'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Num_TKU</th>\
+                        <td>' + (feature.properties['Num_TKU'] !== null ? autolinker.link(feature.properties['Num_TKU'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        
+
+//=========================================================================================================================================================================
+//====================== Layer Control ====================================================================================================================================
+
+var groupedOverlays = {
+    "Hintergrundkarte":{
+        "OpenStreetMap": basemaps.OpenStreetMap,
+        "Google": basemaps.Google_Maps
+        
+    },
+};
+
+
+var options = {
+exclusiveGroups: ["Hintergrundkarte"],
+collapsed:false,
+};
+
+var layerControl = L.control.groupedLayers(basemap0, groupedOverlays, options);
+
+layerControl.addOverlay(layer_VG250_32632_25, '<img src="legend/VG250_32632_25.png" /> Kommunen', "Verwaltungsgrenzen");
+layerControl.addOverlay(layer_VG250_KRS_24, '<img src="legend/VG250_KRS_24.png" /> Kreise / kreisfreie Städte', "Verwaltungsgrenzen",false,true);
+layerControl.addOverlay(layer_Bundeslndergrenzen_2020_23, '<img src="legend/Bundeslndergrenzen_2020_23.png" /> Bundesländer', "Verwaltungsgrenzen");
+
+
+layerControl.addOverlay(layer_BNT_und_Soco_und_goetel_22, '<img src="legend/BNT_und_Soco_und_goetel_22.png" /> bnt & Soco Net & goetel', "Basalt",false,true);
+layerControl.addOverlay(layer_BNT_und_Soco_21, '<img src="legend/BNT_und_Soco_21.png" /> bnt & Soco Net', "Basalt");
+layerControl.addOverlay(layer_goetel_20, '<img src="legend/goetel_20.png" /> goetel', "Basalt");
+
+
+layerControl.addOverlay(layer_Northern_Fibre_Holding_19, '<img src="legend/Northern_Fibre_Holding_19.png" /> Northern Fibre Holding', "Northern Fibre Holding",false,true);
+layerControl.addOverlay(layer_Lnecom_18, '<img src="legend/Lnecom_18.png" /> Lünecom', "Northern Fibre Holding");
+layerControl.addOverlay(layer_Sewikom_17, '<img src="legend/Sewikom_17.png" /> Sewikom', "Northern Fibre Holding");
+
+
+layerControl.addOverlay(layer_Glasfaser_Direkt_16, '<img src="legend/Glasfaser_Direkt_16.png" /> Glasfaser Direkt', "Glasfaser Direkt",false,true);
+layerControl.addOverlay(layer_EFN_Eifel_Net_15, '<img src="legend/EFN_Eifel_Net_15.png" /> EFN Eifel Net', "Glasfaser Direkt");
+layerControl.addOverlay(layer_Jobst_Net_14, '<img src="legend/Jobst_Net_14.png" /> Jobst-Net', "Glasfaser Direkt");
+
+
+layerControl.addOverlay(layer_GVG_13, '<img src="legend/GVG_13.png" /> GVG', "Ausbaukommunen TKU");
+layerControl.addOverlay(layer_TNG_12, '<img src="legend/TNG_12.png" /> TNG', "Ausbaukommunen TKU");
+layerControl.addOverlay(layer_Infrafibre_11, '<img src="legend/Infrafibre_11.png" /> Infrafibre', "Ausbaukommunen TKU");
+layerControl.addOverlay(layer_DNSNet_10, '<img src="legend/DNSNet_10.png" /> DNSNet', "Ausbaukommunen TKU");
+layerControl.addOverlay(layer_DGN_9, '<img src="legend/DGN_9.png" /> DGN', "Ausbaukommunen TKU");
+layerControl.addOverlay(layer_Plusnet_8, '<img src="legend/Plusnet_8.png" /> Plusnet', "Ausbaukommunen TKU");
+//layerControl.addOverlay(layer_Westenergie_7, '<img src="legend/Westenergie_7.png" /> Westenergie', "Ausbaukommunen TKU");
+layerControl.addOverlay(layer_Westconnect_6, '<img src="legend/Westconnect_6.png" /> Westconnect', "Ausbaukommunen TKU");
+layerControl.addOverlay(layer_Deutsche_Giga_Access_5, '<img src="legend/Deutsche_Giga_Access_5.png" /> Deutsche Giga Access', "Ausbaukommunen TKU");
+layerControl.addOverlay(layer_Deutsche_Glasfaser_4, '<img src="legend/Deutsche_Glasfaser_4.png" /> Deutsche Glasfaser', "Ausbaukommunen TKU");
+layerControl.addOverlay(layer_Glasfaser_Plus_3, '<img src="legend/Glasfaser_Plus_3.png" /> Glasfaser Plus', "Ausbaukommunen TKU");
+layerControl.addOverlay(layer_Strategic_Fiber_Networks_2, '<img src="legend/Strategic_Fiber_Networks_2.png" /> Strategic Fiber Networks', "Ausbaukommunen TKU");
+layerControl.addOverlay(layer_Ruhrfibre_Essen_1, '<img src="legend/Ruhrfibre_Essen_1.png" /> ruhrfibre Essen', "Ausbaukommunen TKU");
+layerControl.addOverlay(layer_Telecolumbus_0, '<img src="legend/Telecolumbus_0.png" /> Telecolumbus', "Ausbaukommunen TKU");
+layerControl.addOverlay(layer_GlasfaserNordwest_1, '<img src="legend/GlasfaserNordwest_1.png" /> Glasfaser Nordwest', "Ausbaukommunen TKU");
+
+layerControl.addOverlay(layer_bba_tng, 'TNG', "IST-Zustand");
+layerControl.addOverlay(layer_bba_infra, 'Infrafibre', "IST-Zustand");
+layerControl.addOverlay(layer_bba_dns, 'DNSNet', "IST-Zustand");
+layerControl.addOverlay(layer_bba_dgn, 'DGN', "IST-Zustand");
+layerControl.addOverlay(layer_bba_westconnect, 'Westconnect', "IST-Zustand");
+layerControl.addOverlay(layer_bba_dtglas, 'Deutsche Glasfaser', "IST-Zustand");
+layerControl.addOverlay(layer_bba_stratfibre, 'Strategic Fiber Networks', "IST-Zustand");
+layerControl.addOverlay(layer_bba_telecolumbus, 'Telecolumbus', "IST-Zustand");
+layerControl.addOverlay(layer_bba_glasnw, 'Glasfaser Nordwest', "IST-Zustand");
+
+layerControl.addOverlay(layer_bba_wettbewerb, '<img src="legend/legende4.JPG" /> ', "Wettbewerb");
+
+
+
+
+map.addControl(layerControl);
+
+//=========================================================================================================================================================================
+//====================== Watermark PwC ============================================================================================================================
+
+		
+L.Control.Watermark=L.Control.extend({
+			onAdd:function(map){
+				var img = L.DomUtil.create('img');
+				img.src = 'legend/PwC_fl_c.png';
+				img.style.width = '150px';
+				return img;
+			},
+			onRemove:function(map){},
+		});
+		
+		L.control.watermark = function(opts){
+			return new L.Control.Watermark(opts);
+		}
+		L.control.watermark({position:'bottomleft'}).addTo(map);
+
+//=========================================================================================================================================================================
+//====================== Scalebar =========================================================================================================================================
+
+
+		L.control.scale({
+			metric: true,
+			imperial: false,
+			position: 'bottomright'
+			}).addTo(map);
+
+//=========================================================================================================================================================================
+//====================== DISCLAIMER =======================================================================================================================================
+        L.Control.Infobox = L.Control.extend(
+        {
+            options:
+            {
+                position: 'bottomright',
+            },
+            onAdd: function (map) {
+                var controlDiv = L.DomUtil.create('div', 'leaflet-control-layers leaflet-control-layers-expanded leaflet-control');
+
+                var controlFormHeading = L.DomUtil.create('form', 'leaflet-control-layers-list', controlDiv);
+                var controlDivHeading = L.DomUtil.create('div', 'leaflet-control-layers-overlays', controlFormHeading);
+                var controlLabelHeading = L.DomUtil.create('label', '', controlDivHeading);
+                var controlDivInsideHeading = L.DomUtil.create('div', '', controlLabelHeading);
+
+                var controlInputHeading = L.DomUtil.create('input', 'leaflet-control-layers-selector', controlDivInsideHeading);
+                controlInputHeading.type = "checkbox";
+                controlInputHeading.checked = true;
+
+                var controlSpanHeading = L.DomUtil.create('span', '', controlDivInsideHeading);
+                controlSpanHeading.innerHTML = "<b>Disclaimer</b>";
+
+                var controlDivInfobox = L.DomUtil.create('div', '', controlDiv);
+                controlDivInfobox.style.display = '';
+				controlDivInfobox.innerHTML = 'Die dargestellten Ausbaugebiete können vom tatsächlichen Bestandsnetz<br>der jeweiligen Telekommunikationsunternehmen abweichen. <br> Datenstand: 02/2023';
+                controlInputHeading.onclick = function(){
+                    controlDivInfobox.style.display = controlInputHeading.checked ? '' : 'none';
+                }
+
+                return controlDiv;
+            },
+        });
+
+		var Infobox = new L.Control.Infobox();
+        map.addControl(Infobox);
+
+setBounds();
+
+        </script>
+    </body>
+</html>
